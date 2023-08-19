@@ -180,9 +180,11 @@ function App() {
   }
 
   function login(user) {
+    console.log('user', user)
     auth
       .login(user)
       .then((data) => {
+        console.log('data', data)
         setIsLoggedIn(true);
         localStorage.setItem("token", data.token);
         navigate("/");
