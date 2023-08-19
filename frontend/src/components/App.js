@@ -47,6 +47,7 @@ function App() {
         .then((data) => {
           console.log('data',data)
           setEmail(data.email);
+          setCurrentUser(data)
           setIsLoggedIn(true);
         })
         .catch((err) => {
@@ -59,8 +60,10 @@ function App() {
     isLoggedIn &&
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([user, cards]) => {
+          console.log('user',user)
+          console.log('cards',cards)
           setCurrentUser(user);
-          setCards(cards);
+          setCards(cards.data);
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`);
