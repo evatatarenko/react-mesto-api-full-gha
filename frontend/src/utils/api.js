@@ -83,7 +83,7 @@ class Api {
 const api = new Api({
   url: "https://api.evatatarenko.students.nomoreparties.co",
   headers: {
-    "Authorization": `Bearer ${localStorage.getItem('token')}`,
+    authorization: `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": "application/json",
   },
 });
