@@ -49,6 +49,8 @@ function App() {
           setEmail(data.email);
           setCurrentUser(data)
           setIsLoggedIn(true);
+          navigate("/");
+
         })
         .catch((err) => {
           console.log(err);
