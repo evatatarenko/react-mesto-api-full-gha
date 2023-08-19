@@ -47,6 +47,7 @@ function Main({
             onCardLike={onCardLike}
             onCardDelete={onCardDelete}
             key={card._id}
+            cards={cards}
           />
         ))}
       </section>
