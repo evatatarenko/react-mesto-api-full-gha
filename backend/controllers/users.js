@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const NotFound = require('../Errors/notFound');
 
-const { JWT_SECRET = 'hghghghghghghghg' } = process.env;
+const { JWT_SECRET } = process.env;
 
 const getUser = (req, res, next) => {
   const { userId } = req.params;

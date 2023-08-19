@@ -45,7 +45,8 @@ function App() {
       auth
         .checkToken(token)
         .then((data) => {
-          setEmail(data.data.email);
+          console.log('data',data)
+          setEmail(data.email);
           setIsLoggedIn(true);
         })
         .catch((err) => {
