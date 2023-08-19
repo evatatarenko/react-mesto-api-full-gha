@@ -1,0 +1,11 @@
+.card-form__info {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+@media screen and (max-width: 520px) {
+    .card-form__info {
+        width: 100%;
+    }
+}

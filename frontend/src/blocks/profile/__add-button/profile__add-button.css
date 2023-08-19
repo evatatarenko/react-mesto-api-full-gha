@@ -1,0 +1,48 @@
+.profile__add-button {
+    width: 150px;
+    height: 50px;
+    border: 1px #FFF solid;
+    margin: 0 0 0 244px;
+    background-image: url(../../../images/vector-cross.svg);
+    background-size: 22px 22px;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.profile__add-button:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 880px) {
+    .profile__add-button {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 778px) {
+    .profile__add-button {
+        margin-left: 70px;
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 688px) {
+    .profile__add-button {
+        width: 100%;
+        margin-top: 30px;
+        margin-left:0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .profile__add-button {
+        width: 282px;
+        margin: 36px 0 0 0;
+        background-size: 16px 16px;
+        height: 47px;
+    }
+}

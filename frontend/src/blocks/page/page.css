@@ -1,0 +1,20 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.App {
+  margin: 0 auto;
+  padding: 0% 15px;
+  min-height: 100%;
+  background-color: black;
+  /* max-width: 1280px; */
+  font-family: "Inter", "Arial", "Helvica", sans-serif;
+  -mox-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}

@@ -1,0 +1,17 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 37px 36px;
+    gap: 20px;
+    width: 358px;
+}
+
+@media screen and (max-width: 520px) {
+    .form {
+        margin-top: 75px;
+        gap: 45px;
+        width: 238px;
+        margin-left: auto;
+        margin-bottom: 25px;
+    }
+}

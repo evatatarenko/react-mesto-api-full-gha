@@ -1,0 +1,10 @@
+.form__text {
+    height: 27px;
+    border: none;
+    border-bottom: 1px rgba(0, 0, 0, .2) solid;
+    outline: none;
+    font-size: 14px;
+    align-self:center;
+    width:100%;
+}
+
