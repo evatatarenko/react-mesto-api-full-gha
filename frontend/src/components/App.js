@@ -56,7 +56,7 @@ function App() {
           console.log(err);
         });
     }
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     isLoggedIn &&
