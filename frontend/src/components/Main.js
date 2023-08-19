@@ -40,7 +40,7 @@ function Main({
         ></button>
       </section>
       <section className="elements">
-        {cards.map((card) => (
+        {cards.lenght > 0 && cards.map((card) => (
           <Card
             card={card}
             onCardClick={onCardClick}
