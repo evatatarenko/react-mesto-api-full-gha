@@ -31,13 +31,14 @@ mongoose.connection.on('connected', () => {
 
 mongoose.connect(URI);
 
-app.use(cors());
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(requestLogger);
 
+app.use(cors);
 app.post('/signin', validation.validateSignin, login);
 app.post('/signup', validation.validateSignup, createUser);
 
