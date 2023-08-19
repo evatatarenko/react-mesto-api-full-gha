@@ -6,7 +6,7 @@ const {
   URI = 'mongodb://127.0.0.1:27017/mestodb',
 } = process.env;
 
-const cors = require('cors');
+const cors = require('./middlewares/cors');
 const cookieParser = require('cookie-parser');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const errorCelebrate = require('celebrate').errors;
