@@ -1,7 +1,27 @@
-.profile__container{
- border-radius: 50%;
-cursor: pointer;
-height: 120px;
-position: relative;
- width: 120px;
+.profile__container {
+    display: grid;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 500px;
+    grid-template-columns: fit-content(350px) 24px;
+    grid-template-rows: max-content 1fr;
+    grid-auto-flow: column;
+    column-gap: 18px;
+    align-items: baseline;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    left: 25px;
+    justify-items: center;
+    margin-top: 28px;
+    row-gap: 7px;
+}
+
+@media screen and (min-width: 900px) {
+    .profile__container {
+        margin: 0;
+        left: 0;
+        justify-items: self-start;
+    }
 }

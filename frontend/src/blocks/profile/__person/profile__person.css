@@ -1,0 +1,35 @@
+.profile__person {
+    display: inline;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 33px;
+    text-align: center;
+    margin: 0;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-items: center;
+    max-width: 250px;
+    
+}
+
+@media screen and (min-width: 450px) {
+    .profile__person {
+        max-width: 350px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .profile__person {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 48px;
+        padding-top: 37px;
+        margin-top: 26px;
+    }
+}
+
+

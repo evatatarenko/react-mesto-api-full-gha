@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext.js";
 import Card from "./Card";
+import pen from '../images/pencil-icon.svg'
+import plus from '../images/pencil-icon.svg'
 
 function Main({
   cards,
@@ -16,28 +18,19 @@ function Main({
   return (
     <main className="content">
       <section className="profile">
-        <button className="profile__avatar-btn" onClick={onEditAvatar}>
-          <div className="profile__avatar-vector"></div>
-          <img
-            src={user?.avatar}
-            alt={user?.name}
-            className="profile__avatar"
-          />
+        <button className="profile__avatar-update" type="button" name="avatar-update" onClick={onEditAvatar}>
+          <img src={user?.avatar} alt="Аватар пользователя" className="profile__avatar"/>
         </button>
-        <div className="profile__info">
-          <h1 className="profile__title">{user?.name}</h1>
-          <button
-            onClick={onEditProfile}
-            type="button"
-            className="profile__edit-button popup-link"
-          ></button>
-          <p className="profile__subtitle">{user?.about}</p>
+        <div className="profile__container">
+            <h1 className="profile__person">{user?.name}</h1>
+            <p className="profile__job">{currentUser.about}</p>
+            <button className="profile__edit" type="button" aria-label="редактировать профиль" onClick={onEditProfile}>
+              <img src={pen} alt="иконка карандаш"/>
+            </button>
         </div>
-        <button
-          onClick={onAddPlace}
-          type="button"
-          className="profile__add-button"
-        ></button>
+        <button className="profile__add-button" type="button" aria-label="добавить" onClick={onAddPlace}>
+          <img src={plus} alt="иконка плюс"/>
+        </button>
       </section>
       <section className="elements">
         {cards.map((card) => (
