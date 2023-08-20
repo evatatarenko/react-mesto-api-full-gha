@@ -111,11 +111,12 @@ function App() {
   }
 
   function handleUpdateUser(items) {
+    console.log('updated')
     api
       .updateUserInfo(items)
       .then((user) => {
-        console.log(user)
-        setCurrentUser(user);
+        console.log('updated user', user)
+        setCurrentUser(user.data);
         setIsEditProfilePopupOpen(false);
       })
       .catch((err) => {
@@ -124,7 +125,7 @@ function App() {
   }
 
   function handleUpdateAvatar({ avatar }) {
-    console.log(avatar);
+    console.log('update avata',avatar);
     api
       .updateUserAvatar({ avatar })
       .then((user) => {
@@ -186,7 +187,7 @@ function App() {
   }
 
   function login(user) {
-    console.log('user', user)
+    // console.log('user', user)
     auth
       .login(user)
       .then((data) => {
