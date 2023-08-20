@@ -13,7 +13,6 @@ const Register = ({ isLoggedIn, register }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formValues);
     register(formValues);
   };
 

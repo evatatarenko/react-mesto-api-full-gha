@@ -45,7 +45,6 @@ function App() {
       auth
         .checkToken(token)
         .then((data) => {
-          // console.log('data',data)
           setEmail(data.email);
           setCurrentUser(data)
           setIsLoggedIn(true);
@@ -62,8 +61,6 @@ function App() {
     isLoggedIn &&
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([user, cards]) => {
-          console.log('user init',user)
-          console.log('cards init',cards)
           setCurrentUser(user);
           setCards(cards.data);
         })
@@ -111,11 +108,9 @@ function App() {
   }
 
   function handleUpdateUser(items) {
-    console.log('updated')
     api
       .updateUserInfo(items)
       .then((user) => {
-        console.log('updated user', user)
         setCurrentUser(user.data);
         setIsEditProfilePopupOpen(false);
       })
@@ -125,11 +120,9 @@ function App() {
   }
 
   function handleUpdateAvatar({ avatar }) {
-    console.log('update avata',avatar);
     api
       .updateUserAvatar({ avatar })
       .then((user) => {
-        console.log('updated avatar', user)
         setCurrentUser(user.data);
         setIsEditAvatarPopupOpen(false);
       })
@@ -139,11 +132,9 @@ function App() {
   }
 
   function handleAddPlaceSubmit(items) {
-    console.log('created card')
     api
       .createCard(items)
       .then((newCard) => {
-        console.log('created card', newCard)
         setCards([newCard.data, ...cards]);
         setIsAddPlacePopupOpen(false);
       })
@@ -190,11 +181,9 @@ function App() {
   }
 
   function login(user) {
-    // console.log('user', user)
     auth
       .login(user)
       .then((data) => {
-        // console.log('data', data)
         setIsLoggedIn(true);
         localStorage.setItem("token", data.token);
         navigate("/");
