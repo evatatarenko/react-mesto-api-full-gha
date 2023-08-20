@@ -130,7 +130,7 @@ function App() {
       .updateUserAvatar({ avatar })
       .then((user) => {
         console.log('updated avatar', user)
-        setCurrentUser(user);
+        setCurrentUser(user.data);
         setIsEditAvatarPopupOpen(false);
       })
       .catch((err) => {

@@ -4,9 +4,9 @@ import CurrentUserContext from "../contexts/CurrentUserContext.js";
 function Card({ onCardClick, card, onCardLike, onCardDelete, cards }) {
   const user = useContext(CurrentUserContext);
 
-  // console.log(card)
-  // console.log(user)
-  // console.log(cards)
+  console.log(card)
+  console.log(user)
+  console.log(cards)
 
   function handleClick() {
     onCardClick(card);
