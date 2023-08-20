@@ -23,7 +23,7 @@ function Main({
         </button>
         <div className="profile__container">
             <h1 className="profile__person">{user?.name}</h1>
-            <p className="profile__job">{currentUser.about}</p>
+            <p className="profile__job">{user?.about}</p>
             <button className="profile__edit" type="button" aria-label="редактировать профиль" onClick={onEditProfile}>
               <img src={pen} alt="иконка карандаш"/>
             </button>
