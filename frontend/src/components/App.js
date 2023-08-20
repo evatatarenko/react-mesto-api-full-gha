@@ -60,7 +60,7 @@ function App() {
   useEffect(() => {
     console.log(isLoggedIn)
     isLoggedIn &&
-      Promise.all([api.getUser(), api.getInitialCards()])
+      Promise.all([api.getUser(localStorage.getItem('token')), api.getInitialCards(localStorage.getItem('token'))])
         .then(([user, cards]) => {
           console.log('user',user)
           console.log('user',cards)
