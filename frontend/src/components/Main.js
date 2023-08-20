@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext.js";
 import Card from "./Card";
 import pen from '../images/pencil-icon.svg'
-import plus from '../images/plus-icon.svg'
+import plus from '../images/plus_icon.svg'
 
 function Main({
   cards,
