@@ -144,7 +144,7 @@ function App() {
       .createCard(items)
       .then((newCard) => {
         console.log('created card', newCard)
-        setCards([newCard, ...cards]);
+        setCards([newCard.data, ...cards]);
         setIsAddPlacePopupOpen(false);
       })
       .catch((err) => {
