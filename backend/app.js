@@ -53,7 +53,6 @@ app.use('/users', usersRouter);
 app.use('/cards', cardsRouter);
 
 app.use('/', (req, res, next) => {
-  res.status(404).send({ message: 'страница не найдена' });
   next(new NotFound('маршрут не найден'));
 });
 
