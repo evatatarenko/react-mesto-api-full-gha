@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import CurrentUserContext from "../contexts/CurrentUserContext.js";
 import Card from "./Card";
 import pen from '../images/pencil-icon.svg'
-import plus from '../images/pencil-icon.svg'
+import plus from '../images/plus-icon.svg'
 
 function Main({
   cards,
@@ -14,6 +14,7 @@ function Main({
   onCardLike,
 }) {
   const user = useContext(CurrentUserContext);
+  console.log('curentuesr', user);
 
   return (
     <main className="content">
@@ -22,8 +23,8 @@ function Main({
           <img src={user?.avatar} alt="Аватар пользователя" className="profile__avatar"/>
         </button>
         <div className="profile__container">
-            <h1 className="profile__person">{user?.name}</h1>
-            <p className="profile__job">{user?.about}</p>
+            <h1 className="profile__person">{user.name}</h1>
+            <p className="profile__job">{user.about}</p>
             <button className="profile__edit" type="button" aria-label="редактировать профиль" onClick={onEditProfile}>
               <img src={pen} alt="иконка карандаш"/>
             </button>
