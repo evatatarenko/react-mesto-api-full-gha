@@ -45,6 +45,7 @@ function App() {
       auth
         .checkToken(token)
         .then((data) => {
+          console.log(data)
           setEmail(data.email);
           setCurrentUser(data)
           setIsLoggedIn(true);
