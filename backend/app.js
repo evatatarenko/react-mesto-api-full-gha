@@ -19,6 +19,7 @@ const { login, createUser } = require('./controllers/users');
 const validation = require('./middlewares/validation');
 const errorHandlers = require('./utils/handlers');
 const auth = require('./middlewares/auth');
+const NotFound = require('./Errors/notFound');
 
 const app = express();
 mongoose.connection.on('error', () => {
@@ -53,7 +54,7 @@ app.use('/cards', cardsRouter);
 
 app.use('/', (req, res, next) => {
   res.status(404).send({ message: 'страница не найдена' });
-  next();
+  next(new NotFound('маршрут не найден'));
 });
 
 app.use(errorLogger);

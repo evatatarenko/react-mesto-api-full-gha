@@ -45,7 +45,6 @@ function App() {
       auth
         .checkToken(token)
         .then((data) => {
-          console.log(data)
           setEmail(data.email);
           setCurrentUser(data)
           setIsLoggedIn(true);
@@ -59,9 +58,12 @@ function App() {
   }, []);
 
   useEffect(() => {
+    console.log(isLoggedIn)
     isLoggedIn &&
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([user, cards]) => {
+          console.log('user',user)
+          console.log('user',cards)
           setCurrentUser(user);
           setCards(cards.data);
         })
@@ -170,7 +172,7 @@ function App() {
   function register(user) {
     auth
       .register(user)
-      .then(() => {
+      .then((data) => {
         setIsTooltipOpen(true);
         setIsRegister(true);
         navigate("/sign-in", { replace: true });
