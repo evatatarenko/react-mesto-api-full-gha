@@ -45,7 +45,7 @@ function App() {
       auth
         .checkToken(token)
         .then((data) => {
-          console.log('data',data)
+          // console.log('data',data)
           setEmail(data.email);
           setCurrentUser(data)
           setIsLoggedIn(true);
@@ -62,8 +62,8 @@ function App() {
     isLoggedIn &&
       Promise.all([api.getUser(), api.getInitialCards()])
         .then(([user, cards]) => {
-          console.log('user',user)
-          console.log('cards',cards)
+          console.log('user init',user)
+          console.log('cards init',cards)
           setCurrentUser(user);
           setCards(cards.data);
         })
@@ -129,6 +129,7 @@ function App() {
     api
       .updateUserAvatar({ avatar })
       .then((user) => {
+        console.log('updated avatar', user)
         setCurrentUser(user);
         setIsEditAvatarPopupOpen(false);
       })
@@ -138,9 +139,11 @@ function App() {
   }
 
   function handleAddPlaceSubmit(items) {
+    console.log('created card')
     api
       .createCard(items)
       .then((newCard) => {
+        console.log('created card', newCard)
         setCards([newCard, ...cards]);
         setIsAddPlacePopupOpen(false);
       })
@@ -191,7 +194,7 @@ function App() {
     auth
       .login(user)
       .then((data) => {
-        console.log('data', data)
+        // console.log('data', data)
         setIsLoggedIn(true);
         localStorage.setItem("token", data.token);
         navigate("/");
