@@ -79,7 +79,7 @@ function App() {
         .likeCard(card._id)
         .then((newCard) => {
           setCards((state) =>
-            state.map((c) => (c._id === card._id ? newCard : c))
+            state.map((c) => (c._id === card._id ? newCard.data : c))
           );
         })
         .catch((err) => {
@@ -90,7 +90,7 @@ function App() {
         .dislikeCard(card._id)
         .then((newCard) => {
           setCards((state) =>
-            state.map((c) => (c._id === card._id ? newCard : c))
+            state.map((c) => (c._id === card._id ? newCard.data : c))
           );
         })
         .catch((err) => {
