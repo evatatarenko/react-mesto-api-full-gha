@@ -24,7 +24,10 @@ const getUser = (req, res, next) => {
 
 const getUsers = (req, res, next) => {
   User.find({})
-    .then((user) => res.status(200).send(user))
+    .then((user) => {
+      console.log(user);
+      res.status(200).send(user);
+    })
     .catch(next);
 };
 
@@ -47,6 +50,7 @@ const createUser = (req, res, next) => {
       password: hash,
     }))
     .then((user) => {
+      console.log(user);
       const userWithoutPassword = { ...user.toObject() };
       delete userWithoutPassword.password;
 
@@ -59,6 +63,7 @@ const login = (req, res, next) => {
   const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
+      console.log(user);
       const token = jwt.sign({ _id: user._id }, JWT_SECRET, {
         expiresIn: '7d',
       });
@@ -78,6 +83,7 @@ const changeUser = (req, res, next) => {
   const userId = req.user._id;
   User.findByIdAndUpdate(userId, { name, about }, { new: true, runValidators: true })
     .then((user) => {
+      console.log(user);
       if (user) {
         return res.send({ data: user });
       }
@@ -92,6 +98,7 @@ const changeAvatar = (req, res, next) => {
   const userId = req.user._id;
   User.findByIdAndUpdate(userId, { avatar }, { new: true, runValidators: true })
     .then((user) => {
+      console.log(user);
       if (user) {
         return res.send({ data: user });
       }
@@ -103,7 +110,10 @@ const changeAvatar = (req, res, next) => {
 
 const getMyProfile = (req, res, next) => {
   User.findById(req.user._id)
-    .then((user) => res.send(user))
+    .then((user) => {
+      console.log(user);
+      res.send(user);
+    })
     .catch(next);
 };
 

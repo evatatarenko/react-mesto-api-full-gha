@@ -65,6 +65,8 @@ class Api {
     }).then(this._checkResponse);
   }
 
+
+
   likeCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",

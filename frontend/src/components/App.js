@@ -114,6 +114,7 @@ function App() {
     api
       .updateUserInfo(items)
       .then((user) => {
+        console.log(user)
         setCurrentUser(user);
         setIsEditProfilePopupOpen(false);
       })
