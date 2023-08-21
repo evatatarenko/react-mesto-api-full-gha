@@ -6,9 +6,7 @@ const {
   URI = 'mongodb://127.0.0.1:27017/mestodb',
 } = process.env;
 
-const cors = require('./middlewares/cors');
 const cookieParser = require('cookie-parser');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
 const errorCelebrate = require('celebrate').errors;
 const express = require('express');
 const mongoose = require('mongoose');
@@ -17,6 +15,8 @@ const usersRouter = require('./routes/users');
 const cardsRouter = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
 const validation = require('./middlewares/validation');
+const cors = require('./middlewares/cors');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const errorHandlers = require('./utils/handlers');
 const auth = require('./middlewares/auth');
 const NotFound = require('./Errors/notFound');
